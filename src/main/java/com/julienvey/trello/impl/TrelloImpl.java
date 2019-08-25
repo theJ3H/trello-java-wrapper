@@ -49,6 +49,7 @@ import static com.julienvey.trello.impl.TrelloUrl.GET_MEMBER;
 import static com.julienvey.trello.impl.TrelloUrl.GET_MEMBER_ACTIONS;
 import static com.julienvey.trello.impl.TrelloUrl.GET_MEMBER_BOARDS;
 import static com.julienvey.trello.impl.TrelloUrl.GET_MEMBER_CARDS;
+import static com.julienvey.trello.impl.TrelloUrl.GET_MEMBER_TOKENS;
 import static com.julienvey.trello.impl.TrelloUrl.GET_ORGANIZATION_BOARD;
 import static com.julienvey.trello.impl.TrelloUrl.GET_ORGANIZATION_MEMBER;
 import static com.julienvey.trello.impl.TrelloUrl.REMOVE_MEMBER_FROM_BOARD;
@@ -99,6 +100,7 @@ import com.julienvey.trello.domain.MemberType;
 import com.julienvey.trello.domain.MyPrefs;
 import com.julienvey.trello.domain.Organization;
 import com.julienvey.trello.domain.TList;
+import com.julienvey.trello.domain.Token;
 import com.julienvey.trello.domain.TrelloEntity;
 import com.julienvey.trello.domain.Webhook;
 import com.julienvey.trello.impl.domaininternal.Comment;
@@ -504,6 +506,11 @@ public class TrelloImpl implements Trello {
     @Override
     public List<Action> getMemberActions(String userId, Argument... args) {
         return asList(() -> get(createUrl(GET_MEMBER_ACTIONS).params(args).asString(), Action[].class, userId));
+    }
+    
+    @Override
+    public List<Token> getMemberTokens(String userId, Argument... args) {
+    	return asList(() -> get(createUrl(GET_MEMBER_TOKENS).params(args).asString(), Token[].class, userId)); 
     }
 
     @Override

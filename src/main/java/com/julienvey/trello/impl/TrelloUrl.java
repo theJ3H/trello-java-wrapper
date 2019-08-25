@@ -63,6 +63,7 @@ public class TrelloUrl {
     public static final String GET_MEMBER_BOARDS = "/members/{userId}/boards?";
     public static final String GET_MEMBER_ACTIONS = "/members/{userId}/actions?";
     public static final String GET_MEMBER_CARDS = "/members/{userId}/cards?";
+    public static final String GET_MEMBER_TOKENS = "/members/{userId}/tokens?";
     public static final String ADD_LABEL_TO_CARD = "/cards/{cardId}/labels?";
     public static final String ADD_EXISTING_LABEL_TO_CARD = "/cards/{cardId}/idLabels?";
     public static final String ADD_COMMENT_TO_CARD = "/cards/{cardId}/actions/comments?";
@@ -74,7 +75,7 @@ public class TrelloUrl {
     public static final String GET_WEBHOOK = "/webhooks/{webhookId}?";
     public static final String UPDATE_WEBHOOK = "/webhooks/{webhookId}?";
     public static final String DELETE_WEBHOOK = "/webhooks/{webhookId}?";
-    public static final String CREATE_WEBHOOK = "/webhooks/{webhookId}?";
+    public static final String CREATE_WEBHOOK = "/webhooks/?";
 
     private String baseUrl;
     private Argument[] args = {};
