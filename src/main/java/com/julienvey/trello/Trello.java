@@ -19,6 +19,7 @@ import com.julienvey.trello.domain.MemberType;
 import com.julienvey.trello.domain.MyPrefs;
 import com.julienvey.trello.domain.Organization;
 import com.julienvey.trello.domain.TList;
+import com.julienvey.trello.domain.Webhook;
 
 public interface Trello {
 
@@ -261,4 +262,12 @@ public interface Trello {
     List<Card> getMemberCards(String userId, Argument... args);
 
     List<Action> getMemberActions(String userId, Argument... args);
+    
+    Webhook getWebhook(String webhookId, Argument... args);
+    
+    Webhook updateWebhook(Webhook webhook);
+    
+    Webhook createWebhook(Webhook webhook);
+    
+    void deleteWebhook(String webhookId);
 }
